@@ -63,8 +63,8 @@ function authenticate(config, stuff, user, accessToken, cb) {
 }
 
 function middlewares(config, stuff, app, auth, storage) {
-  var clientId = config['client-id'];
-  var clientSecret = config['client-secret'];
+  var clientId = process.env['OAUTH_CLIENT_ID'] || config['client-id'];
+  var clientSecret = process.env['OAUTH_CLIENT_SECRET'] || config['client-secret'];
 
   if (clientId === undefined || clientSecret === undefined) {
     throw Error('server needs to be configured with github client id and secret')
