@@ -23,6 +23,8 @@ auth:
     cache-ttl-ms: 60000 # default to 30s if not present
 ```
 
+Alternatively, this fork allows you to use environment variables to configure the client-id and client-secret. Respectively: `OAUTH_CLIENT_ID` and `OAUTH_CLIENT_SECRET`.
+
 ## Run
 `$ sinopia -c /path/to/config.yaml -l 0.0.0.0:4873`
 
